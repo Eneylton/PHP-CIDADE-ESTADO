@@ -62,6 +62,25 @@ $("#estados_id").on("change", function(){
        url:'cliente-list.php',
        type:'POST',
        data:{id:idEstado},
+      
+       success:function(data){
+           $("#cidades_id").css({'display':'block'});
+           $("#cidades_id").html(data);
+       }
+   })
+
+});
+
+</script>
+
+<script>
+$("#estados_cod").on("change", function(){
+   
+   var idEstado = $("#estados_cod").val();
+   $.ajax({
+       url:'cliente-list.php',
+       type:'POST',
+       data:{id:idEstado},
        beforeSend:function(){
            $("#cidades").css({'display':'block'});
            $("#cidades").html("carregando....");
@@ -75,6 +94,7 @@ $("#estados_id").on("change", function(){
 });
 
 </script>
+
 <script>
 $(document).ready(function(){
     $('.editbtn').on('click', function(){

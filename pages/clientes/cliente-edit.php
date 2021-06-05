@@ -29,12 +29,10 @@ if (!$value instanceof Cliente) {
 
         if (isset($_GET['nome'])) {
 
-            $value->nome      = $_GET['nome'];
-            $value->telefone  = $_GET['telefone'];
-            $value->email     = $_GET['email'];
-            $value->placa     = $_GET['placa'];
-            $value->marcas_id = $_GET['marcas_id'];
-            $value->usuarios_id = $usuarios_id;
+            $value->nome           = $_GET['nome'];
+            $value->estados_id     = $_GET['estados_id'];
+            $value->cidades_id     = $_GET['cidades_id'];
+           
             $value->atualizar();
 
             header('location: cliente-list.php?status=success');

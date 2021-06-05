@@ -99,8 +99,8 @@ foreach ($paginas as $key => $pagina) {
                         <tr>
 
                            <th> NOME </th>
-                           <th> ESTADO </th>
-                           <th> CIDADE </th>
+                           <th> ESTADOS </th>
+                           <th> CIDADES </th>
 
                            <th style="text-align: center; width:200px"> AÇÃO </th>
                         </tr>
@@ -146,8 +146,9 @@ foreach ($paginas as $key => $pagina) {
                </div>
 
                <div class="form-group">
-                  <select class="form-control form-control-lg" name="estados_id" id="estados_id" required>
-
+                  <label>Estados</label>
+                  <select class="form-control form-control-lg" name="estados_id" id="estados_cod" required>
+                     <option value=""> Selecione um Estado </option>
                      <?php
 
                      foreach ($estados as $item) {
@@ -158,8 +159,10 @@ foreach ($paginas as $key => $pagina) {
                </div>
 
                <div class="form-group">
+
+                  <label>Cidade</label>
                   <select class="form-control form-control-lg" name="cidades" id="cidades" required>
-                    
+
 
                   </select>
                </div>
@@ -194,29 +197,31 @@ foreach ($paginas as $key => $pagina) {
             <div class="modal-body">
                <input type="hidden" name="id" id="id">
                <div class="modal-body">
-               <div class="form-group">
-                  <label>Nome</label>
-                  <input type="text" name="nome" class="form-control" placeholder="Nome" id="nome" required>
-               </div>
+                  <div class="form-group">
+                     <label>Nome</label>
+                     <input type="text" name="nome" class="form-control" placeholder="Nome" id="nome" required>
+                  </div>
 
-               <div class="form-group">
-                  <select class="form-control form-control-lg" name="estados_id" id="estados_id" required>
+                  <div class="form-group">
+                  <label>Estados</label>
+                     <select class="form-control form-control-lg" name="estados_id" id="estados_id" required>
 
-                     <?php
+                        <?php
 
-                     foreach ($estados as $item) {
-                        echo '<option value="' . $item->id . '">' . $item->nome . '</option>';
-                     }
-                     ?>
-                  </select>
-               </div>
+                        foreach ($estados as $item) {
+                           echo '<option value="' . $item->id . '">' . $item->nome . '</option>';
+                        }
+                        ?>
+                     </select>
+                  </div>
 
-               <div class="form-group">
-                  <select class="form-control form-control-lg" name="cidades_id" id="cidades_id" required>
-                    
+                  <div class="form-group">
+                  <label>Cidades</label>
+                     <select class="form-control form-control-lg" name="cidades_id" id="cidades_id" required>
 
-                  </select>
-               </div>
+
+                     </select>
+                  </div>
 
                </div>
             </div>
